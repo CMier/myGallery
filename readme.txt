@@ -20,10 +20,10 @@ Contents of gallery.php
 </head>
 <body>
 <a href="index.html">Go to Upload form</a>
-   <h1>Caesar's Gallery Viewing</h1>
-   <div align="center">
-  			<table style="width: 100%; border: 0">
-  				<tr>
+   <h1>Caesar and Ken's Gallery Viewing</h1>
+   <div align="center"> 
+  			<table style="width: 100%; border: 0"> 
+  				<tr> 
 
 <?php
     //stores metadata in arrays
@@ -38,22 +38,22 @@ Contents of gallery.php
     echo 'Problem: ';
     switch ($_FILES['the_file']['error'])
     {
-      case 1:
+      case 1:  
          echo 'File exceeded upload_max_filesize.';
          break;
-      case 2:
+      case 2:  
          echo 'File exceeded max_file_size.';
          break;
-      case 3:
+      case 3:  
          echo 'File only partially uploaded.';
          break;
-      case 4:
+      case 4:  
          echo 'No file uploaded.';
          break;
-      case 6:
+      case 6:  
          echo 'Cannot upload file: No temp directory specified.';
          break;
-      case 7:
+      case 7:  
          echo 'Upload failed: Cannot write to disk.';
          break;
     }
@@ -86,43 +86,43 @@ Contents of gallery.php
   }
 
 
-
+  
 
 // display images in uploads folder
 
 
   $imagesDirectory = "uploads/";
-
+ 
   if(is_dir($imagesDirectory))
   {
       $opendirectory = opendir($imagesDirectory);
-
+    
       while (($image = readdir($opendirectory)) !== false)
       {
           if(($image == '.') || ($image == '..'))
           {
               continue;
           }
-
+          
           $imgFileType = pathinfo($image,PATHINFO_EXTENSION);
-
+          
           if(($imgFileType == 'jpg') || ($imgFileType == 'png'))
           {
-
+              
              echo "<img src='uploads/".$image."' width='200'> ";
-
+              
               //add code here
              // if($image == $_FILES['the_file']['name']){
                  //echo "Name: " .$name[0];
 
 
 
-                 for ($i = 0; $i < sizeof($name); $i++) {
-                  echo "<td style=\"width: 33%; text-align: center\"> <img src=\"";
+                 for ($i = 0; $i < sizeof($name); $i++) { 
+                  echo "<td style=\"width: 33%; text-align: center\"> <img src=\""; 
                   echo "\"/></td>";
                   echo nl2br("Name: $name[$i]\nDate: $date[$i]\nLocation: $location[$i]\nPhotographer: $photographer[$i]");
-
-               }
+                  
+               } 
 
 
 
@@ -132,21 +132,21 @@ Contents of gallery.php
 
 
               }
-
-
-
+               
+               
+              
           }
       }
-
+      
       closedir($opendirectory);
-
-
+   
+  
 
 ?>
 
 </tr>
 
-  			</table>
+  			</table>     
   		</div>
 </body>
 </html>

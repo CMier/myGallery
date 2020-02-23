@@ -5,7 +5,7 @@
 </head>
 <body>
 <a href="index.html">Go to Upload form</a>
-   <h1>Caesar's Gallery Viewing</h1>
+   <h1>Caesar and Ken's Gallery Viewing</h1>
    <div align="center"> 
   			<table style="width: 100%; border: 0"> 
   				<tr> 
